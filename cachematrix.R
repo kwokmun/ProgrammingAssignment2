@@ -1,3 +1,6 @@
+## Author: Kwokmun Lee
+## Date: June 20, 2015
+
 ## This function accepts a square matrix as an argument, 
 ## and has four separate functions that enables users to:
 ## 1. Get the matrix that was passed.
