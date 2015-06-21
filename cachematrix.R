@@ -32,6 +32,37 @@ makeCacheMatrix <- function(x = matrix()) {
 ## If it's not available, then it calculates the inverse from scratch
 ## and caches it.
 
+## Note: Run makeCacheMatrix() once to cache the matrix. Then you can 
+##       run cacheSolve() to calculate the inverse. If you wish to test 
+##       this on another square matrix, be sure to run makeCacheMatrix()
+##       once before running cacheSolve()
+
+# Sample Output:
+#      
+# > source("cachematrix.R")
+# > cac <- makeCacheMatrix(matrix2)
+# > cacheSolve(cac)
+# [,1] [,2]
+# [1,] -12.5   12
+# [2,]  11.5  -11
+# > cacheSolve(cac)
+# getting cached data
+# [,1] [,2]
+# [1,] -12.5   12
+# [2,]  11.5  -11
+# > cac <- makeCacheMatrix(matrix3)
+# > cacheSolve(cac)
+# [,1] [,2] [,3]
+# [1,]   -6  3.6  1.4
+# [2,]    5 -3.0 -1.0
+# [3,]   -1  0.8  0.2
+# > cacheSolve(cac)
+# getting cached data
+# [,1] [,2] [,3]
+# [1,]   -6  3.6  1.4
+# [2,]    5 -3.0 -1.0
+# [3,]   -1  0.8  0.2
+
 cacheSolve <- function(x, ...) {
      ## Return a matrix that is the inverse of 'x'
      m <- x$getinv()
